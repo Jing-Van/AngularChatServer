@@ -1,0 +1,26 @@
+#menu-outer {
+  height: 68px;
+}
+
+ul.horizontal-list {
+  min-width: 696px;
+  list-style: none;
+}
+ul.horizontal-list li {
+  display: inline;
+  a{
+    font-size:30px;
+    margin:10px;
+  }
+}
+
+.code-area{
+  overflow: auto;
+  border: 1px solid grey;
+}
+
+.preview-area{
+  img{
+    max-width:800px;
+  }
+}

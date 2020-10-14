@@ -1,0 +1,37 @@
+<h1>
+  Task4:</h1>
+<h4>This task is about message and communication</h4>
+
+<ul>
+  <li>Fix the chat room below</li>
+</ul>
+
+<h4>Target preview:</h4>
+<button *ngIf="!showPreview" (click)="showPreview = true">Show</button>
+<button *ngIf="showPreview" (click)="showPreview = false">Hide</button>
+<div class="preview-area">
+  <img [src]="target" *ngIf="showPreview">
+</div>
+
+<h4>Your work:</h4>
+<div class="code-area" id="chat-room">
+  <div class="chat-panel">
+    <ul class="message-list">
+
+      <!--TODO a list of messages, with avtars and name(for INIT messages) and body-->
+
+      <li *ngFor="let message of messageList">
+        <img src="{{message.avatar}}"> {{ message.name }}
+        <br> {{ message.body }}
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+<footer class="form-group">
+  <input class="form-control" id="chat-input" [(ngModel)]="newMessage" (keyup.enter)="addMessage()" type="text" placeholder="Type your message">
+</footer>
+
+<countBot [countbotmessageList]="messageList"></countBot>
+<reverseBot [reversebotmessageList]="messageList"></reverseBot>

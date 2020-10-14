@@ -1,0 +1,57 @@
+ul.shopping-cart {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+ul.shopping-cart li {
+  width: 800px;
+  margin-top: 10px;
+  height: 30px;
+  font-weight: 500;
+}
+
+
+ul.shopping-cart{
+    list-style-type: disc;
+    -webkit-columns: 6;
+    -moz-columns: 6;
+    columns: 6;
+    list-style-position: inside;//this is important addition
+}
+
+tr.shopping-cart {
+	background: #e83e8c;
+}
+
+.table {
+  thead th{
+    white-space: nowrap;
+  }
+
+}
+
+.table{
+    table-layout: fixed;
+    width: 200px;
+}
+
+th, td {
+    width: 100px;
+}
+
+th.number, td {
+    width: 50px;
+}
+
+th.name, td {
+    width: 300px;
+}
+
+th.ali-right {
+    text-align: right!important;
+}
+
+th.ali-left {
+    text-align: left!important;
+}
+

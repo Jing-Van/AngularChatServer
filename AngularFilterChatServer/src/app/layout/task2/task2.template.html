@@ -1,0 +1,49 @@
+<h1>Task2:</h1>
+
+<h4>This task is about Data Bindings and Filters</h4>
+
+<ul>
+  <li>Find prepared mock data</li>
+  <li>Change the product total value into a properly formatted price</li>
+  <li>Click '<i class="fa fa-minus"></i>' and '<i class="fa fa-plus"></i>' to adjust the amount</li>
+  <li>Click '<i class="fa fa-trash-o"></i>' to remove a product</li>
+  <li>Total price automatically recalculated if user removes a product or change its amount</li>
+  <li>Amount can never go below zero</li>
+</ul>
+
+<h4>Target preview:</h4>
+<button *ngIf="!showPreview" (click)="showPreview = true">Show</button>
+<button *ngIf="showPreview" (click)="showPreview = false">Hide</button>
+<div class="preview-area">
+  <img [src]="target" *ngIf="showPreview">
+</div>
+
+<h4>Your work:</h4>
+
+<div class="code-area">
+  <!--TODO:display mock data-->
+
+  <table class="table table-hover" *ngFor="let item of mockData let i=index" >
+
+    <tr class="shopping-cart" id="{{ i }}">
+        <th class="name">{{ item.name}}</th>
+        <th class="ali-right"> <i class="fa fa-minus" align="right" (click)="decrement(i,mockSelection)"></i> </th>
+        <th class="number">x{{ mockSelection[i]['amount'] }}</th>
+        <th class="ali-left"><i class="fa fa-plus" align="left" (click)="increment(i, mockSelection)"></i> </th>
+        <th>{{ item.unitValue}}</th>
+        <th><i class="fa fa-trash-o" (click)="removeProduct(i)"></i> </th>
+        <th class="rowtotal">{{ item.unitValue*mockSelection[i]['amount'] | number : '1.2-2' }}</th>
+    </tr>
+
+    <tbody>
+
+  </table>
+
+    <!--TODO List of Products-->
+
+  <h4 class="total-value">
+    <!--TODO Calculate Totals-->
+    Total: {{ calculateTotal() | number : '1.2-2' }}
+  </h4>
+</div>
+
